@@ -7,6 +7,8 @@ public class LaserFoot : MonoBehaviour
     [SerializeField] private GameObject beet;
     [SerializeField] private GameObject[] beetPosition;
     private bool instantiateCount =Å@true;
+    private GameObject afterBeet;
+    private Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,11 +22,14 @@ public class LaserFoot : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.tag != "Player" && instantiateCount==true)
+        if (other.transform.tag != "Player" && instantiateCount == true)
         {
             for (int i = 0; i < beetPosition.Length; i++)
             {
-                Instantiate(beet, beetPosition[i].transform.position, Quaternion.identity);
+               afterBeet = Instantiate(beet, beetPosition[i].transform.position, Quaternion.identity);
+                rb = afterBeet.GetComponent<Rigidbody>();
+              //  rb.velocity= new Vector3(beetPosition[i].transform.rotation.x * 100, beetPosition[i].transform.rotation.y * 100, beetPosition[i].transform.rotation.z * 100);
+                rb.velocity = beetPosition[i].transform.forward * 10;
             }
             instantiateCount = false;
         }

@@ -13,10 +13,9 @@ public class Laser_move : MonoBehaviour {
 
     void Start () {
         rb = GetComponent<Rigidbody>();
-        moveX = Random.Range(-10.0f, 10.0f) * speed;
-        moveY = Random.Range(-10.0f, 10.0f) * speed;
-        moveZ = Random.Range(3.0f, 10.0f) * speed;
-        rb.velocity = new Vector3(moveX, moveY, moveZ);//初期ベクトル
+        moveX = 10 * speed;
+        
+   //     rb.velocity = new Vector3(moveX, 0, 0);//初期ベクトル
     }
 	
 	void Update () {
