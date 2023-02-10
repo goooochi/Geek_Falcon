@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 //Original
-public class Laser_Create_Player1 : MonoBehaviour {
+public class Laser_Create_Key : MonoBehaviour {
 
 
     private Vector3[] Laser_direction = {
@@ -28,8 +28,9 @@ public class Laser_Create_Player1 : MonoBehaviour {
 
     public GameObject Laser_prefab;
     public static int collision = 0;
-    public static Laser_Create_Player1 instance;
+    public static Laser_Create_Key instance;
     public  bool canCreateLaser = true;
+    float coolTime = 0.1f;
     public void Awake()
     {
         if (instance == null)
@@ -46,29 +47,28 @@ public class Laser_Create_Player1 : MonoBehaviour {
 
 	void Update () {
 
-        
+        if (coolTime > 0)
+        {
+            coolTime -= Time.deltaTime;
+        }
 
 
     }
 
-    public void PlayerLaserCreate()
+    private void OnTriggerEnter(Collider other)
     {
-
-            if (canCreateLaser == true)
+        if (other.gameObject.name == "Laser_prefab_Player(Clone)" && coolTime < 0)
+        {
+            for (int i = 0; i < Laser_direction.Length; i++)
             {
+                GameObject l = Instantiate(Laser_prefab, this.transform.position + new Vector3(0, 0.2f, 0), Quaternion.identity);
+                l.GetComponent<Rigidbody>().velocity = Laser_direction[i];
 
-                Debug.Log(canCreateLaser);
-                Debug.Log(Laser_direction.Length);
-                for (int i = 0; i < Laser_direction.Length; i++)
-                {
-                    GameObject l = Instantiate(Laser_prefab, this.transform.position + new Vector3(0, 0.2f, 0), Quaternion.identity);
-                    l.GetComponent<Rigidbody>().velocity = Laser_direction[i];
-
-                }
             }
+            coolTime = 0.1f;
+        }
         
-
-
     }
-   
+    
+
 }
