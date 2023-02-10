@@ -10,6 +10,7 @@ public class enemyScript : MonoBehaviour
     float moveSpeed;
     void Start()
     {
+         
         agent = GetComponent<NavMeshAgent>();
         moveSpeed = agent.speed;
     }
