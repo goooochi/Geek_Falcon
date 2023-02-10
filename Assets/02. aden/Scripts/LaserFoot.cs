@@ -6,7 +6,7 @@ public class LaserFoot : MonoBehaviour
 {
     [SerializeField] private GameObject beet;
     [SerializeField] private GameObject[] beetPosition;
-    private bool instantiateCount =Å@true;
+    private bool instantiateCount = true;
     private GameObject afterBeet;
     private Rigidbody rb;
     // Start is called before the first frame update
