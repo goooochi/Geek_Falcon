@@ -1144,7 +1144,6 @@ GameObject:
   - component: {fileID: 5763282410228568910}
   - component: {fileID: 5763282410228568954}
   - component: {fileID: 5763282410535741778}
-  - component: {fileID: 5763282410535741779}
   - component: {fileID: 5763282410535741781}
   - component: {fileID: 5763282410535741766}
   - component: {fileID: 5763282410535741767}
@@ -1277,10 +1276,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 0.99999994
+  m_Radius: 0.14975266
+  m_Height: 1.5119056
   m_Direction: 1
-  m_Center: {x: 0, y: 0.5129056, z: 0}
+  m_Center: {x: 0, y: 0.7688584, z: -0.051140502}
 --- !u!82 &5763282410228568944
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1430,19 +1429,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!65 &5763282410535741779
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5763282410535710255}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.6021576, y: 1.5593415, z: 0.23188782}
-  m_Center: {x: -0.005908966, y: 0.783866, z: -0.0019683838}
 --- !u!81 &5763282410535741781
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1517,8 +1503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f80ae15474276044098dd701c4f339f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyCount: 0
-  keyCountText: {fileID: 0}
+  keyCount: 2
 --- !u!114 &4875227102574444087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1531,6 +1516,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06af340fdbdac49c195892e397795c56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Panel: {fileID: 0}
 --- !u!1 &5763282410535710257
 GameObject:
   m_ObjectHideFlags: 0

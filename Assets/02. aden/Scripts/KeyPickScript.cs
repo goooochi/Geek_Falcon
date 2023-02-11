@@ -6,18 +6,22 @@ using UnityEngine.EventSystems;
 
 public class KeyPickScript : MonoBehaviour
 {
-    public Text PickUI;
+    GameObject PickUI;
+    Text pickText;
     PlayerGoalKeyScript playerGoalKeyScript;
     [SerializeField] private GameObject player;
     private void Start()
     {
+        player = GameObject.Find("unitychan(Clone)");
         playerGoalKeyScript = player.GetComponent<PlayerGoalKeyScript>();
+        PickUI = GameObject.Find("E");
+        pickText = PickUI.GetComponent<Text>();
     }
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            PickUI.text = "Eキーで鍵を拾う";
+            pickText.text = "Eキーで鍵を拾う";
             if (Input.GetKeyDown(KeyCode.E))
             {
                 /*   ExecuteEvents.Execute<IEventCaller>(
@@ -27,7 +31,7 @@ public class KeyPickScript : MonoBehaviour
 
                        */
                 playerGoalKeyScript.keyCount++;
-                PickUI.text = "";
+               pickText.text = "";
                 Destroy(this.gameObject);
             }
         }
@@ -36,7 +40,7 @@ public class KeyPickScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            PickUI.text = "";
+            pickText.text = "";
         }
     }
  /*  void KeyCaller(IEventCaller inf,BaseEventData eventData)

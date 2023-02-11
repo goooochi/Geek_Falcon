@@ -94,6 +94,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7296848834553053304}
   - component: {fileID: 8509348762850729064}
+  - component: {fileID: 2045922129096787335}
+  - component: {fileID: 2512300351895058404}
   m_Layer: 0
   m_Name: key_2_collider
   m_TagString: Key
@@ -130,3 +132,31 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.5, z: 0.5}
   m_Center: {x: -1.5, y: 0, z: 0}
+--- !u!114 &2045922129096787335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7928672864317889218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c204104e2944c224e9a547021d2564b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PickUI: {fileID: 0}
+  player: {fileID: 5763282410535710255, guid: f3e67dbd62e42467b9505daa5ad834f2, type: 3}
+--- !u!114 &2512300351895058404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7928672864317889218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9dc74aa5362f94ca89c592717f962c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Laser_prefab: {fileID: 7640318207155115458, guid: 51705ef829885420a80deb9b45cf9562, type: 3}
+  canCreateLaser: 1
