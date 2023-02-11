@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8831084470388304518}
   - component: {fileID: 5933914537879442380}
   - component: {fileID: 7168822359358945112}
+  - component: {fileID: 4671172061831020663}
   m_Layer: 0
   m_Name: default
   m_TagString: Untagged
@@ -83,6 +84,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!195 &4671172061831020663
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304133673734158781}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 1.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 180.09863
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &8770113861506023780
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,12 +118,12 @@ GameObject:
   - component: {fileID: 8463633445205889407}
   - component: {fileID: 8463633445205889344}
   - component: {fileID: 8463633445205889404}
-  - component: {fileID: 8463633445205889345}
+  - component: {fileID: 8907545614653029948}
   - component: {fileID: 8463633445205889406}
   - component: {fileID: 8463633445205889405}
   m_Layer: 0
   m_Name: enemy
-  m_TagString: Enemy
+  m_TagString: Original_Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -247,7 +270,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8463633445205889345
+--- !u!114 &8907545614653029948
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -256,7 +279,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8770113861506023780}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0fde225208f84ddcb66e83b27d2e28f, type: 3}
+  m_Script: {fileID: 11500000, guid: 7fe75518cb23743a68b79a730184d1fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!195 &8463633445205889406

@@ -6,11 +6,10 @@ using UnityEngine.EventSystems;
 
 public class KeyPickScript : MonoBehaviour
 {
-    public Text PickUI;
-    [SerializeField] private GameObject player;
+    Text PickUI;
     private void Start()
     {
-        
+        PickUI = GameObject.Find("KeyPickText").GetComponent<Text>();
     }
     private void OnTriggerStay(Collider other)
     {

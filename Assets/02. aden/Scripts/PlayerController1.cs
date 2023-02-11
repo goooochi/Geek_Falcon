@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class PlayerController1 : MonoBehaviour
 {
-
+    public static bool crouch;
     private Animator animator;
     Rigidbody rb;
     float sensitiveMove = 2f;
@@ -80,8 +80,10 @@ public class PlayerController1 : MonoBehaviour
         //しゃがみ
         if (Input.GetKey(KeyCode.C))
         {
+            crouch = true;
             if (Input.GetKeyDown(KeyCode.C))
             {
+                crouch = false;
                 cam.transform.DOMoveY(0.7f, 0.5f).SetEase(Ease.InOutQuad);
             }
             animator.SetBool("Walking", false);

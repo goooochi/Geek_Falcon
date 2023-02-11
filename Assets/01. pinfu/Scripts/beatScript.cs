@@ -7,7 +7,7 @@ public class beatScript : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     private IEnumerator coroutine;
     void Start()
-    {
+    { 
         audioSource = GetComponent<AudioSource>();
         coroutine = TempoMake();
         StartCoroutine(coroutine);

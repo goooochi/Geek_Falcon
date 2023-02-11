@@ -1383,6 +1383,7 @@ GameObject:
   - component: {fileID: 3894938263134181686}
   - component: {fileID: 3894938263134181692}
   - component: {fileID: 3894938263134181681}
+  - component: {fileID: 5246246470283091959}
   m_Layer: 0
   m_Name: unitychan
   m_TagString: Player
@@ -1531,7 +1532,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae469578e592c41ca8fd6fe41e2e7e04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Panel: {fileID: 0}
+  Panel: {fileID: 43452664136963611, guid: 43c046f7ea79240e0bf8f244a98320b7, type: 3}
+--- !u!114 &5246246470283091959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3894938263134215745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06af340fdbdac49c195892e397795c56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3894938263134215747
 GameObject:
   m_ObjectHideFlags: 0

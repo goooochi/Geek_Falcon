@@ -66,23 +66,14 @@ public class Laser_move_Player : MonoBehaviour {
                 Debug.Log("This is ClearJudge Cube");
                 Laser_Create_Goal.instance.CreateGoalLaser();
             }
-
-            if (coll.gameObject.name == "Enemy_01" || coll.gameObject.name == "Enemy_02")
-            {
-                Laser_Create_Enemy.instance.isChasing = true;
-                PatrolEnemyNavigator.instance.tracking = true;
-            }
         }
-
-        if (coll.gameObject.tag == "Player_Cube")//プレイヤーと当たった時
-        {
-            Vector3 refrectVec = Vector3.Reflect(this.lastVelocity, coll.contacts[0].normal);//反射ベクトル計算
-            this.rb.velocity = refrectVec;
-            Laser_Create_Player.collision = 1;//赤く光らせる用
-        }
-
-        
     }
-
-
+    private void OnTriggerEnter(Collider collider)
+    {
+        if (collider.gameObject.tag == "Nomal_Enemy")
+        {
+            Debug.Log("hit");
+            enemyScript.isTrigger = true;
+        }
+    }
 }
