@@ -39,6 +39,7 @@ public class FootPrintCreator : MonoBehaviour
 
     void FootStepLeft()
     {
+        Debug.Log("Nandedayo");
         Instantiate(footStepLeft, transform.position, transform.rotation);
         Laser_Create_Player.instance.PlayerLaserCreate();
         audioSource.Play();
