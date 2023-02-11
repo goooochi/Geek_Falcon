@@ -18,6 +18,7 @@ public class KeyPickScript : MonoBehaviour
             PickUI.text = "[E] Pick up the Key";
             if (Input.GetKeyDown(KeyCode.E))
             {
+                Debug.Log("get");
                 PickUI.text = "";
             }
         }
@@ -26,6 +27,7 @@ public class KeyPickScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            Debug.Log("hanareta");
             PickUI.text = "";
         }
     }

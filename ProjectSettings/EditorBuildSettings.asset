@@ -5,19 +5,28 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/01. pinfu/Scenes/Title.unity
     guid: a490109b652d845ca82e35e2ae08c753
-  - enabled: 1
+  - enabled: 0
     path: Assets/01. pinfu/Scenes/Stage.unity
     guid: 9f927c468de4f4b65a8a7d6b37a27a90
-  - enabled: 1
+  - enabled: 0
     path: Assets/01. pinfu/Scenes/GameOver.unity
     guid: f6f06511687b1481fb47e5506ca03fd8
-  - enabled: 1
+  - enabled: 0
     path: Assets/01. pinfu/Scenes/Clear.unity
     guid: cb5580f90bdd740dab07f0af19d6994a
   - enabled: 1
-    path: Assets/naichilab/unity-simple-ranking/Scenes/Ranking.unity
-    guid: 152244f5855414ac4a3874f14efa583c
+    path: Assets/Main/scenes/Title.unity
+    guid: cc23cf86adb4a47e7a78a8797a020fa5
+  - enabled: 1
+    path: Assets/Main/scenes/Stage.unity
+    guid: c4fe67cac74eb4e62a90bc70a003390a
+  - enabled: 1
+    path: Assets/Main/scenes/GameOver.unity
+    guid: e14e6640b6be5454f8fa7dfc1d7b8129
+  - enabled: 1
+    path: Assets/Main/scenes/Clear.unity
+    guid: 780fd108e150d4bd7800c69cf438a026
   m_configObjects: {}
