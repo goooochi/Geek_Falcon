@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,12 +8,12 @@ public class KeyPickScript : MonoBehaviour
 {
     GameObject PickUI;
     Text pickText;
-    PlayerGoalKeyScript playerGoalKeyScript;
+  //  PlayerGoalKeyScript playerGoalKeyScript;
     [SerializeField] private GameObject player;
     private void Start()
     {
         player = GameObject.Find("unitychan(Clone)");
-        playerGoalKeyScript = player.GetComponent<PlayerGoalKeyScript>();
+       // playerGoalKeyScript = player.GetComponent<PlayerGoalKeyScript>();
         PickUI = GameObject.Find("E");
         pickText = PickUI.GetComponent<Text>();
     }
@@ -24,13 +24,13 @@ public class KeyPickScript : MonoBehaviour
             pickText.text = "EÉLÅ[Ç≈åÆÇèEÇ§";
             if (Input.GetKeyDown(KeyCode.E))
             {
-                /*   ExecuteEvents.Execute<IEventCaller>(
+                   ExecuteEvents.Execute<IEventCaller>(
                        target: player,
                        eventData: null,
                        functor: KeyCaller);
 
-                       */
-                playerGoalKeyScript.keyCount++;
+                       
+               // playerGoalKeyScript.keyCount++;
                pickText.text = "";
                 Destroy(this.gameObject);
             }
@@ -43,10 +43,10 @@ public class KeyPickScript : MonoBehaviour
             pickText.text = "";
         }
     }
- /*  void KeyCaller(IEventCaller inf,BaseEventData eventData)
+  void KeyCaller(IEventCaller inf,BaseEventData eventData)
     {
         inf.KeyCall(this.gameObject.name);
 
         
-    }*/
-}
+    }
+}*/
