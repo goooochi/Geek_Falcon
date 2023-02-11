@@ -60,25 +60,33 @@ public class PlayerController1 : MonoBehaviour
             rb.velocity = Vector3.zero;
         }
 
+        // 
+        if (Input.GetKey("left shift") && Input.GetKey(KeyCode.W)) //Shiftキーかつ上キーが押されている間
+        {
+            Vector3 velocity = gameObject.transform.rotation * new Vector3(0, 0, 3);
+            gameObject.transform.position += velocity * Time.deltaTime;
+            animator.SetBool("Running", true);
+        }
+        else
+        {
+            animator.SetBool("Running", false);
+        }
 
-        //if (Input.GetKey(KeyCode.A))
-        //{
-        //    transform.Rotate(0, -1, 0);
-        //}
+        if (Input.GetKeyUp("left shift")) //Shiftキーを離したとき
+        {
+            animator.SetBool("Running", false);
 
-        //if (Input.GetKey(KeyCode.D))
-        //{
-        //    transform.Rotate(0, 1, 0);
-        //}
+        }
 
-        
-         if (Input.GetKey(KeyCode.C))
+
+        //しゃがみ
+        if (Input.GetKey(KeyCode.C))
         {
             if (Input.GetKeyDown(KeyCode.C))
             {
                 cam.transform.DOMoveY(0.7f, 0.5f).SetEase(Ease.InOutQuad);
             }
-                animator.SetBool("Walking", false);
+            animator.SetBool("Walking", false);
             animator.SetBool("Squat", true);
            
             if (Input.GetKey(KeyCode.W))
@@ -106,23 +114,9 @@ public class PlayerController1 : MonoBehaviour
                 laser_Create_Player1.canCreateLaser = false;
             }
         }
-       else if (Input.GetKey("left shift") && Input.GetKey(KeyCode.W)) //Shiftキーかつ上キーが押されている間
-        {
-            Vector3 velocity = gameObject.transform.rotation * new Vector3(0, 0, 3);
-            gameObject.transform.position += velocity * Time.deltaTime;
-            animator.SetBool("Running", true);
-        }
+        
 
-        else
-        {
-            animator.SetBool("Running", false);
-        }
-
-        if (Input.GetKeyUp("left shift")) //Shiftキーを離したとき
-        {
-            animator.SetBool("Running", false);
-
-        }
+        
         if (Input.GetKeyUp(KeyCode.C))
         {
             laser_Create_Player1.canCreateLaser = true;
