@@ -16,8 +16,8 @@ public class PlayerGoalKeyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        keyCountText.text = "" + keyCount;
-        Debug.Log(keyCount);
+        //keyCountText.text = "" + keyCount;
+        //Debug.Log(keyCount);
     }
    /* public void KeyCall(string keyName)
     {

@@ -33,8 +33,6 @@ public class Compass : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-
         var diff = destination.position - player.position;
 
         var axis = Vector3.Cross(player.forward, diff);

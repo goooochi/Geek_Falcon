@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 33547576763181652}
   - component: {fileID: 23809166561378370}
   - component: {fileID: 54409154416363362}
-  - component: {fileID: 114503465662628890}
   - component: {fileID: 65908810793195394}
+  - component: {fileID: -8597779149064884060}
   m_Layer: 3
   m_Name: Laser_prefab_Player
   m_TagString: Untagged
@@ -102,20 +102,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
---- !u!114 &114503465662628890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1450584830110524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fa95a69d59df704c8843f38279d9079, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  originalLaser: {fileID: 1450584830110524}
+  m_CollisionDetection: 1
 --- !u!65 &65908810793195394
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -129,6 +116,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0, y: 0, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-8597779149064884060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450584830110524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 406ec8e979efc43aa8496fea49c95ae2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalLaser: {fileID: 1450584830110524}
 --- !u!1 &1916492510347326
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,7 +139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4781693456029774}
   - component: {fileID: 96188131088332118}
-  - component: {fileID: 114170676709919886}
+  - component: {fileID: 33312083528800478}
   - component: {fileID: 8159041252464496022}
   m_Layer: 3
   m_Name: Laser_tail_Player
@@ -290,7 +290,7 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!114 &114170676709919886
+--- !u!114 &33312083528800478
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -299,7 +299,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1916492510347326}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cd6307e87d889048955ec9dabd86c7e, type: 3}
+  m_Script: {fileID: 11500000, guid: 44579e515a3f34f34a8bf2f900b6a3ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!65 &8159041252464496022
@@ -314,4 +314,4 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -0.0078068674, y: 0.0149405375, z: -0.027733818}
