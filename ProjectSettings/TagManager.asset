@@ -10,6 +10,7 @@ TagManager:
   - Laser
   - Enemy
   - Key
+  - Goal
   layers:
   - Default
   - TransparentFX

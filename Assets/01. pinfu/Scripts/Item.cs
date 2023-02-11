@@ -6,17 +6,24 @@ using UnityEngine.UI;
 
 public class Item : MonoBehaviour
 {
-    public GameObject Panel;
+    private GameObject Panel;
+    private GameObject keyNumObject;
+    private Text keyNumText;
     Image Panel_image;
     private float alpha;
     private bool keyFlag;
     private int keyCount;
     private string sceneName;
     private bool fadeout = false;
+    private bool KeyPush = false;
+     
     // Start is called before the first frame update
     void Start()
     {
-
+        Panel = GameObject.Find("FadePanel");
+        keyNumObject = GameObject.Find("KeyNumText");
+        keyNumText = keyNumObject.GetComponent<Text>();
+        keyNumText.text = "Collect Key : 0";
     }
 
     // Update is called once per frame
@@ -29,12 +36,14 @@ public class Item : MonoBehaviour
     }
     private void OnTriggerEnter(Collider col)
     {
-        if (col.gameObject.tag == "Key" && Input.GetKeyDown(KeyCode.E))
-        { 
+        if (col.gameObject.tag == "Key" && Input.GetKey(KeyCode.E))
+        {
             keyCount += 1;
             Destroy(col.gameObject);
+            Debug.Log(KeyPush);
+            keyNumText.text = "Collect Key : " + keyCount;
         }
-        if (col.gameObject.tag == "Goal" && keyCount >= 3)
+        if (col.gameObject.tag == "Goal")
         {
             fadeout = true;
             sceneName = "Clear";

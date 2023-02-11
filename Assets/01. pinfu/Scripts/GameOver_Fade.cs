@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameOver_Fade : MonoBehaviour
 {
-    public GameObject Panel;
+    private GameObject Panel;
     Image Panel_image;
     private float alpha;
     private bool fadeout = false;
@@ -15,6 +15,7 @@ public class GameOver_Fade : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Panel = GameObject.Find("FadePanel");
         Panel_image = Panel.GetComponent<Image>();
         alpha = Panel_image.color.a;
         fadein = true;
