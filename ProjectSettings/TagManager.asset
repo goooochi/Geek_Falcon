@@ -4,16 +4,19 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Key
+  - Cube
+  - Cube_Destroy
+  - Undefined
+  - Laser
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Laser
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - FootPrint
   - 
   - 
   - 
