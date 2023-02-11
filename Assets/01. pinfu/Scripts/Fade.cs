@@ -32,10 +32,10 @@ public class Fade : MonoBehaviour
         {
             FadeIn();
         }
-     if (Input.GetMouseButtonDown(0))
+    /* if (Input.GetMouseButtonDown(0))
         {
             fadeout = true;
-        } 
+        }*/ 
     }
     void FadeOut()
     {
@@ -55,5 +55,9 @@ public class Fade : MonoBehaviour
         {
             fadein = false;
         }
+    }
+    public void FadeScene()
+    {
+        fadeout = true;
     }
 }
