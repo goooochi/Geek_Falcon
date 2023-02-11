@@ -34,7 +34,7 @@ public class Laser_move_Player : MonoBehaviour {
 	
 	void Update () {
         time++;
-        if (time > 200)//60フレーム後に弾削除
+        if (time > 400)//60フレーム後に弾削除
         {
             transform.DetachChildren();//親オブジェクトから子オブジェクトを解除
             Destroy(gameObject);//弾削除
@@ -52,6 +52,7 @@ public class Laser_move_Player : MonoBehaviour {
     {
         if (coll.gameObject.tag == "Cube")//壁と当たった時
         {
+            Debug.Log("Reflect");
             Vector3 refrectVec = Vector3.Reflect(this.lastVelocity, coll.contacts[0].normal);//反射ベクトル計算
             this.rb.velocity = refrectVec;
 
