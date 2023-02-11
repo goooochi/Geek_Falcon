@@ -16,7 +16,7 @@ public class Laser_tail_Item: MonoBehaviour
     void Update()
     {
         time++;
-        if (time > 100)//60フレーム後に削除
+        if (time > 80)//60フレーム後に削除
         {
             Destroy(gameObject);
         }
