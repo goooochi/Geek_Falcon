@@ -38,7 +38,8 @@ public class Item : MonoBehaviour
     }
     private void OnTriggerStay(Collider col)
     {
-        if (col.gameObject.tag == "Key" && Input.GetKey(KeyCode.E))
+        Debug.Log("hit");
+        if (Input.GetKey(KeyCode.E) && col.gameObject.tag == "Key")
         {
             keyCount += 1;
             Destroy(col.gameObject);
