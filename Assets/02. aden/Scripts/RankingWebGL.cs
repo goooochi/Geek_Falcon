@@ -8,7 +8,7 @@ public class RankingWebGL : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        naichilab.RankingLoader.Instance.SendScoreAndShowRanking(score);
+        naichilab.RankingLoader.Instance.SendScoreAndShowRanking(300);
     }
 
    
