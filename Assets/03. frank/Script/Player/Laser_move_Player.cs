@@ -50,16 +50,18 @@ public class Laser_move_Player : MonoBehaviour {
 
     private void OnCollisionEnter(Collision coll)
     {
+        if (GetComponent<Collider>().gameObject.name == "default")
+        {
+            Laser_Create_Item.instance.CreateItemLaser();
+            Laser_Create_Item_2.instance.CreateItemLaser();
+            Laser_Create_Item_3.instance.CreateItemLaser();
+        }
+
         if (coll.gameObject.tag == "Cube")//壁と当たった時
         {
-            Debug.Log("Reflect");
             Vector3 refrectVec = Vector3.Reflect(this.lastVelocity, coll.contacts[0].normal);//反射ベクトル計算
             this.rb.velocity = refrectVec;
 
-            if(coll.gameObject.name == "Key(Clone)")
-            {
-                Laser_Create_Item.instance.CreateItemLaser();
-            }
 
             if (coll.gameObject.name == "ClearJudge")
             {
@@ -67,13 +69,21 @@ public class Laser_move_Player : MonoBehaviour {
                 Laser_Create_Goal.instance.CreateGoalLaser();
             }
         }
+
+        
     }
     private void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.tag == "Nomal_Enemy")
         {
-            Debug.Log("hit");
             enemyScript.isTrigger = true;
+        }
+
+        if (collider.gameObject.name == "default")
+        {
+            Laser_Create_Item.instance.CreateItemLaser();
+            Laser_Create_Item_2.instance.CreateItemLaser();
+            Laser_Create_Item_3.instance.CreateItemLaser();
         }
     }
 }

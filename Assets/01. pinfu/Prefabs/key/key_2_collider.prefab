@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8413071640607206654}
   - component: {fileID: 5177574974633915640}
   - component: {fileID: 9139948542165216423}
+  - component: {fileID: 1057302515901266391}
   m_Layer: 0
   m_Name: default
   m_TagString: Key
@@ -111,6 +112,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0545499, y: 0.1856376, z: 0.65352756}
   m_Center: {x: -1.467492, y: -0.011142328, z: -0.1384016}
+--- !u!114 &1057302515901266391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406677888074326555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9068040c95af34fba986d65e259a2314, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Laser_prefab_Item: {fileID: 7640318207155115458, guid: 51705ef829885420a80deb9b45cf9562, type: 3}
 --- !u!1 &7928672864317889218
 GameObject:
   m_ObjectHideFlags: 0

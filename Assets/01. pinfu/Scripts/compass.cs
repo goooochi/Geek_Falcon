@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class compass : MonoBehaviour
 {
     public GameObject iconPrefab;
-    List<QestMarker> qestMarkers = new List<QestMarker>();
+    public List<QestMarker> qestMarkers = new List<QestMarker>();
 
     public RawImage compassImage;
     Transform player_position;

@@ -43,7 +43,6 @@ public class Item : MonoBehaviour
         {
             keyCount += 1;
             Destroy(col.gameObject);
-            col.gameObject.GetComponent<compass_image_alpha>().changeAlpha();
             Debug.Log(KeyPush);
             keyNumText.text = "Collect Key : " + keyCount;
         }
