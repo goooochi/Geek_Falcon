@@ -63,4 +63,12 @@ public class GameOver_Fade : MonoBehaviour
         fadeout = true;
         sceneName = "Title";
     }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            fadeout = true;
+            sceneName = "GameOver";
+        }
+    }
 }
