@@ -11,8 +11,7 @@ public class PlayerController1 : MonoBehaviour
     float sensitiveMove = 2f;
     [SerializeField] private Camera cam;
     [SerializeField] private GameObject player;
-    Laser_Create_Player1 laser_Create_Player1;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +19,6 @@ public class PlayerController1 : MonoBehaviour
         animator = GetComponent<Animator>();
         Cursor.visible = false;
 
-        laser_Create_Player1 = player.GetComponent<Laser_Create_Player1>();
         //ウィンドウ内のみ
         Cursor.lockState = CursorLockMode.Confined;
         //中央にロック
@@ -93,25 +91,21 @@ public class PlayerController1 : MonoBehaviour
             {
                 Vector3 velocity = gameObject.transform.rotation * new Vector3(0, 0, -2);
                 gameObject.transform.position += velocity * Time.deltaTime;
-                laser_Create_Player1.canCreateLaser = false;
             }
             else if (Input.GetKey(KeyCode.S))
             {
                 Vector3 velocity = gameObject.transform.rotation * new Vector3(0, 0, 2);
                 gameObject.transform.position += velocity * Time.deltaTime;
-                laser_Create_Player1.canCreateLaser = false;
             }
             else if (Input.GetKey(KeyCode.A))
             {
                 Vector3 velocity = gameObject.transform.rotation * new Vector3(2, 0, 0);
                 gameObject.transform.position += velocity * Time.deltaTime;
-                laser_Create_Player1.canCreateLaser = false;
             }
             else if (Input.GetKey(KeyCode.D))
             {
                 Vector3 velocity = gameObject.transform.rotation * new Vector3(-2, 0, 2);
                 gameObject.transform.position += velocity * Time.deltaTime;
-                laser_Create_Player1.canCreateLaser = false;
             }
         }
         
@@ -119,7 +113,6 @@ public class PlayerController1 : MonoBehaviour
         
         if (Input.GetKeyUp(KeyCode.C))
         {
-            laser_Create_Player1.canCreateLaser = true;
             animator.SetBool("Squat", false);
             cam.transform.DOMoveY(2.2f, 1).SetEase(Ease.InOutQuad);
         }
