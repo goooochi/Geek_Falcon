@@ -6914,7 +6914,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1110707254
 Transform:
   m_ObjectHideFlags: 0
@@ -12606,6 +12606,22 @@ PrefabInstance:
     - target: {fileID: 4303901473067312895, guid: f3e67dbd62e42467b9505daa5ad834f2, type: 3}
       propertyPath: m_Name
       value: unitychan
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303901473108431733, guid: f3e67dbd62e42467b9505daa5ad834f2, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303901473108431733, guid: f3e67dbd62e42467b9505daa5ad834f2, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303901473108431733, guid: f3e67dbd62e42467b9505daa5ad834f2, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303901473108431733, guid: f3e67dbd62e42467b9505daa5ad834f2, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3e67dbd62e42467b9505daa5ad834f2, type: 3}
