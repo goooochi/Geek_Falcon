@@ -21,6 +21,8 @@ public class Item : MonoBehaviour
     void Start()
     {
         Panel = GameObject.Find("FadePanel");
+        Panel_image = Panel.GetComponent<Image>();
+        alpha = Panel_image.color.a;
         keyNumObject = GameObject.Find("KeyNumText");
         keyNumText = keyNumObject.GetComponent<Text>();
         keyNumText.text = "Collect Key : 0";
@@ -43,14 +45,19 @@ public class Item : MonoBehaviour
             Debug.Log(KeyPush);
             keyNumText.text = "Collect Key : " + keyCount;
         }
-        if (col.gameObject.tag == "Goal")
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Goal")
         {
+            Debug.Log(keyCount);
             fadeout = true;
             sceneName = "Clear";
         }
     }
     void FadeOut()
     {
+        Panel.SetActive(true);
         alpha += 0.001f;
         Panel_image.color = new Color(0, 0, 0, alpha);
         if (alpha >= 1)
