@@ -20,7 +20,7 @@ public class LaserFoot : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter(Collider other)
+   /* private void OnTriggerEnter(Collider other)
     {
         if (other.transform.tag != "Player" && instantiateCount == true)
         {
@@ -40,7 +40,7 @@ public class LaserFoot : MonoBehaviour
         {
             instantiateCount = true;
         }
-    }
+    }*/
 
 
 }
