@@ -5,12 +5,14 @@ using UnityEngine.AI;
 
 public class enemyScript : MonoBehaviour
 {
-    [SerializeField] private Transform target;
+    GameObject targetObject;
+    private Transform target;
     NavMeshAgent agent;
     float moveSpeed;
     void Start()
     {
-         
+        targetObject = GameObject.Find("unitychan");
+        target = targetObject.transform;
         agent = GetComponent<NavMeshAgent>();
         moveSpeed = agent.speed;
     }
