@@ -17,6 +17,7 @@ public class PlayerGoalKeyScript : MonoBehaviour
     void Update()
     {
         keyCountText.text = "Š‚µ‚Ä‚¢‚éŒ®‚Ì”~" + keyCount;
+        Debug.Log(keyCount);
     }
    /* public void KeyCall(string keyName)
     {

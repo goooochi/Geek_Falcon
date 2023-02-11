@@ -42,6 +42,18 @@ public class PlayerController1 : MonoBehaviour
             gameObject.transform.position -= velocity * Time.deltaTime;
             animator.SetBool("Walking", true);
         }
+        else if (Input.GetKey(KeyCode.A))
+        {
+            Vector3 velocity = gameObject.transform.rotation * new Vector3(3, 0, 0);
+            gameObject.transform.position -= velocity * Time.deltaTime;
+            animator.SetBool("Walking", true);
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            Vector3 velocity = gameObject.transform.rotation * new Vector3(-3, 0, 0);
+            gameObject.transform.position -= velocity * Time.deltaTime;
+            animator.SetBool("Walking", true);
+        }
         else
         {
             animator.SetBool("Walking", false);
@@ -78,6 +90,18 @@ public class PlayerController1 : MonoBehaviour
             else if (Input.GetKey(KeyCode.S))
             {
                 Vector3 velocity = gameObject.transform.rotation * new Vector3(0, 0, 2);
+                gameObject.transform.position += velocity * Time.deltaTime;
+                laser_Create_Player1.canCreateLaser = false;
+            }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                Vector3 velocity = gameObject.transform.rotation * new Vector3(2, 0, 0);
+                gameObject.transform.position += velocity * Time.deltaTime;
+                laser_Create_Player1.canCreateLaser = false;
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                Vector3 velocity = gameObject.transform.rotation * new Vector3(-2, 0, 2);
                 gameObject.transform.position += velocity * Time.deltaTime;
                 laser_Create_Player1.canCreateLaser = false;
             }

@@ -24,10 +24,11 @@ public class KeyPickScript : MonoBehaviour
                        target: player,
                        eventData: null,
                        functor: KeyCaller);
+
                        */
-                PickUI.text = "";
                 playerGoalKeyScript.keyCount++;
-                Destroy(gameObject);
+                PickUI.text = "";
+                Destroy(this.gameObject);
             }
         }
     }
@@ -38,10 +39,10 @@ public class KeyPickScript : MonoBehaviour
             PickUI.text = "";
         }
     }
-   void KeyCaller(IEventCaller inf,BaseEventData eventData)
+ /*  void KeyCaller(IEventCaller inf,BaseEventData eventData)
     {
         inf.KeyCall(this.gameObject.name);
 
         
-    }
+    }*/
 }
