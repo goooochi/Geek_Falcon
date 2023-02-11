@@ -11,14 +11,14 @@ public class enemyScript : MonoBehaviour
     float moveSpeed;
     void Start()
     {
-        targetObject = GameObject.Find("unitychan");
+        targetObject = GameObject.Find("unitychan(Clone)");
         target = targetObject.transform;
         agent = GetComponent<NavMeshAgent>();
         moveSpeed = agent.speed;
     }
     void Update()
     {
-        if (Vector3.Distance(transform.position, target.position) < 30.0f)
+        if (Vector3.Distance(this.gameObject.transform.position,target.position) < 30.0f)
         {
             agent.destination = target.position;
             agent.speed = moveSpeed;
