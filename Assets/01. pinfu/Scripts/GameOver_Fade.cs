@@ -66,7 +66,7 @@ public class GameOver_Fade : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "Nomal_Enemy" || other.gameObject.tag == "Original_Enemy")
         {
             fadeout = true;
             sceneName = "GameOver";
