@@ -8,9 +8,10 @@ TagManager:
   - Cube_Destroy
   - Undefined
   - Laser
-  - Enemy
   - Key
   - Goal
+  - Nomal_Enemy
+  - Original_Enemy
   layers:
   - Default
   - TransparentFX
