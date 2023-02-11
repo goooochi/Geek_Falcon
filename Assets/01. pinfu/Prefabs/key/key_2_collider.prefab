@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 7868819240198811936}
   - component: {fileID: 5036297841856546922}
   - component: {fileID: 8413071640607206654}
+  - component: {fileID: 9139948542165216423}
   m_Layer: 0
   m_Name: default
-  m_TagString: Untagged
+  m_TagString: Key
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,6 +85,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &9139948542165216423
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406677888074326555}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0545499, y: 0.1856376, z: 0.65352756}
+  m_Center: {x: -1.467492, y: -0.011142328, z: -0.1384016}
 --- !u!1 &7928672864317889218
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,7 +107,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7296848834553053304}
-  - component: {fileID: 8509348762850729064}
   m_Layer: 0
   m_Name: key_2_collider
   m_TagString: Key
@@ -117,16 +130,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &8509348762850729064
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7928672864317889218}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.5, z: 0.5}
-  m_Center: {x: -1.5, y: 0, z: 0}

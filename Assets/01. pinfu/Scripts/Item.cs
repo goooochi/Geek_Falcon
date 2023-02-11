@@ -36,7 +36,7 @@ public class Item : MonoBehaviour
             FadeOut();
         }
     }
-    private void OnTriggerEnter(Collider col)
+    private void OnTriggerStay(Collider col)
     {
         if (col.gameObject.tag == "Key" && Input.GetKey(KeyCode.E))
         {
