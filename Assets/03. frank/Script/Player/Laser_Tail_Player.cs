@@ -13,7 +13,7 @@ public class Laser_Tail_Player : MonoBehaviour {
 	void Update () {
 
         time++;
-        if(time>400)//60フレーム後に削除
+        if(time>300)//60フレーム後に削除
         {
             Destroy(gameObject);
         }
