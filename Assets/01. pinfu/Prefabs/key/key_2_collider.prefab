@@ -120,7 +120,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7296848834553053304}
-  - component: {fileID: -2530254168669340381}
+  - component: {fileID: 8379062796507973957}
   m_Layer: 0
   m_Name: key_2_collider
   m_TagString: Key
@@ -144,7 +144,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-2530254168669340381
+--- !u!114 &8379062796507973957
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
