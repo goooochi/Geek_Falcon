@@ -70,6 +70,9 @@ public class GameOver_Fade : MonoBehaviour
         {
             fadeout = true;
             sceneName = "GameOver";
+            Cursor.visible = true;
+
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }
