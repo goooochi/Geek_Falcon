@@ -34,7 +34,7 @@ public class Laser_move_Player : MonoBehaviour {
 	
 	void Update () {
         time++;
-        if (time > 350)//60フレーム後に弾削除
+        if (time > 230)//60フレーム後に弾削除
         {
             transform.DetachChildren();//親オブジェクトから子オブジェクトを解除
             Destroy(gameObject);//弾削除
