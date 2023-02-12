@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class Item : MonoBehaviour
 {
+    public static string objName;
     private GameObject Panel;
     private GameObject keyNumObject;
     private Text keyNumText;
@@ -38,9 +39,10 @@ public class Item : MonoBehaviour
     }
     private void OnTriggerStay(Collider col)
     {
-        Debug.Log("hit");
         if (Input.GetKey(KeyCode.E) && col.gameObject.tag == "Key")
         {
+            objName = col.gameObject.name;
+            Debug.Log(objName);
             keyCount += 1;
             Destroy(col.gameObject);
             Debug.Log(KeyPush);
@@ -59,7 +61,7 @@ public class Item : MonoBehaviour
     void FadeOut()
     {
         Panel.SetActive(true);
-        alpha += 0.001f;
+        alpha += 0.1f;
         Panel_image.color = new Color(0, 0, 0, alpha);
         if (alpha >= 1)
         {

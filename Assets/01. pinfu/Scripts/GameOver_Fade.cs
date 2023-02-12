@@ -36,7 +36,7 @@ public class GameOver_Fade : MonoBehaviour
     }
     void FadeOut()
     {
-        alpha += 0.001f;
+        alpha += 0.1f;
         Panel_image.color = new Color(0, 0, 0, alpha);
         if (alpha >= 1)
         {
@@ -46,7 +46,7 @@ public class GameOver_Fade : MonoBehaviour
     }
     void FadeIn()
     {
-        alpha -= 0.001f;
+        alpha -= 0.1f;
         Panel_image.color = new Color(0, 0, 0, alpha);
         if (alpha <= 0)
         {
@@ -70,9 +70,6 @@ public class GameOver_Fade : MonoBehaviour
         {
             fadeout = true;
             sceneName = "GameOver";
-            Cursor.visible = true;
-
-            Cursor.lockState = CursorLockMode.None;
         }
     }
 }

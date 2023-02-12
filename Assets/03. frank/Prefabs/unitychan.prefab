@@ -5197,8 +5197,8 @@ AudioReverbFilter:
   m_RoomHF: 0
   m_DecayTime: 1
   m_DecayHFRatio: 0.5
-  m_ReflectionsLevel: -10000
-  m_ReverbLevel: 0
+  m_ReflectionsLevel: -5000
+  m_ReverbLevel: 100
   m_ReverbDelay: 0.04
   m_Diffusion: 100
   m_Density: 100
@@ -5283,6 +5283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf84ef84b0236494eb6f71842779455f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crouch: 0
   cam: {fileID: 4303901473108431733}
   player: {fileID: 4303901473067312895}
 --- !u!114 &4303901473067278746

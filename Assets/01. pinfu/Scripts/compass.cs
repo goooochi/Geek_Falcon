@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class compass : MonoBehaviour
 {
+    private int number;
     public GameObject iconPrefab;
-    public List<QestMarker> qestMarkers = new List<QestMarker>();
+    List<QestMarker> qestMarkers = new List<QestMarker>();
 
     public RawImage compassImage;
     Transform player_position;
@@ -19,7 +20,7 @@ public class compass : MonoBehaviour
     QestMarker four;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         player_position = GameObject.Find("unitychan(Clone)").GetComponent<Transform>();
         compassUnit = compassImage.rectTransform.rect.width / 360f;
@@ -47,7 +48,9 @@ public class compass : MonoBehaviour
 
     public void AddQestMaker (QestMarker marker)
     {
+        number++;
         GameObject newMaker = Instantiate(iconPrefab, compassImage.transform);
+        newMaker.name= "Maker" + number.ToString();
         marker.image = newMaker.GetComponent<Image>();
         marker.image.sprite = marker.icon;
 
