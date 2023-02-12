@@ -5,12 +5,22 @@ using DG.Tweening;
 
 public class PlayerController1 : MonoBehaviour
 {
-    public static bool crouch;
+    public bool crouch;
     private Animator animator;
     Rigidbody rb;
     float sensitiveMove = 2f;
     [SerializeField] private Camera cam;
     [SerializeField] private GameObject player;
+
+    public static PlayerController1 instance;
+
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -80,10 +90,11 @@ public class PlayerController1 : MonoBehaviour
         //しゃがみ
         if (Input.GetKey(KeyCode.C))
         {
+            Debug.Log("PlayerController1 : ");
             crouch = true;
             if (Input.GetKeyDown(KeyCode.C))
             {
-                crouch = false;
+                
                 cam.transform.DOMoveY(0.7f, 0.5f).SetEase(Ease.InOutQuad);
             }
             animator.SetBool("Walking", false);
@@ -115,6 +126,7 @@ public class PlayerController1 : MonoBehaviour
         
         if (Input.GetKeyUp(KeyCode.C))
         {
+            crouch = false;
             animator.SetBool("Squat", false);
             cam.transform.DOMoveY(2.2f, 1).SetEase(Ease.InOutQuad);
         }

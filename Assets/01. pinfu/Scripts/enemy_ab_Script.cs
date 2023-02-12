@@ -18,14 +18,13 @@ public class enemy_ab_Script : MonoBehaviour
     }
     void Update()
     {
-        if (Vector3.Distance(this.gameObject.transform.position,target.position) < 30.0f && PlayerController1.crouch == false)
+        if (Vector3.Distance(this.gameObject.transform.position,target.position) < 30.0f && PlayerController1.instance.crouch == false)
         {
             agent.destination = target.position;
             agent.speed = moveSpeed;
-        }else if(PlayerController1.crouch == false)
+        }else if(PlayerController1.instance.crouch == true)
         {
-            agent.destination = target.position;
-            agent.speed = -moveSpeed;
+            agent.speed = 0;
         }
         else
         {

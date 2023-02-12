@@ -22,7 +22,6 @@ public class enemyScript : MonoBehaviour
     {
         if (isTrigger)
         {
-            Debug.Log("正常");
             agent.destination = target.position;
             agent.speed = moveSpeed;
         }

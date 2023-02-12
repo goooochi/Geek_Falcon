@@ -50,12 +50,7 @@ public class Laser_move_Player : MonoBehaviour {
 
     private void OnCollisionEnter(Collision coll)
     {
-        if (GetComponent<Collider>().gameObject.name == "default")
-        {
-            Laser_Create_Item.instance.CreateItemLaser();
-            Laser_Create_Item_2.instance.CreateItemLaser();
-            Laser_Create_Item_3.instance.CreateItemLaser();
-        }
+        
 
         if (coll.gameObject.tag == "Cube")//壁と当たった時
         {
@@ -63,11 +58,6 @@ public class Laser_move_Player : MonoBehaviour {
             this.rb.velocity = refrectVec;
 
 
-            if (coll.gameObject.name == "ClearJudge")
-            {
-                Debug.Log("This is ClearJudge Cube");
-                Laser_Create_Goal.instance.CreateGoalLaser();
-            }
         }
 
         
@@ -78,12 +68,21 @@ public class Laser_move_Player : MonoBehaviour {
         {
             enemyScript.isTrigger = true;
         }
-
-        if (collider.gameObject.name == "default")
+        //colliderがついているのは、子オブジェクトであるため
+        if (collider.transform.parent.name == "key_1_collider(Clone)")
         {
             Laser_Create_Item.instance.CreateItemLaser();
+        }
+
+        if (collider.transform.parent.name == "key_2_collider(Clone)")
+        {
             Laser_Create_Item_2.instance.CreateItemLaser();
+        }
+
+        if (collider.transform.parent.name == "key_3_collider(Clone)")
+        {
             Laser_Create_Item_3.instance.CreateItemLaser();
         }
+
     }
 }
