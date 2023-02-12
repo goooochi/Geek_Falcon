@@ -7,6 +7,17 @@ public class TimeScript : MonoBehaviour
 {
     private float time;
     public Text TimeText;
+    public bool getTime;
+    public static TimeScript instance;
+    public int score;
+
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -18,5 +29,11 @@ public class TimeScript : MonoBehaviour
     {
         time += Time.deltaTime;
         TimeText.text = time.ToString("F2");
+
+        if (getTime)
+        {
+            score = (int)time;
+            getTime = false;
+        }
     }
 }

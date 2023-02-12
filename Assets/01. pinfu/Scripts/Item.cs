@@ -17,7 +17,8 @@ public class Item : MonoBehaviour
     private string sceneName;
     private bool fadeout = false;
     private bool KeyPush = false;
-     
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +54,7 @@ public class Item : MonoBehaviour
     {
         if (collision.gameObject.tag == "Goal")
         {
+            TimeScript.instance.getTime = true;
             Debug.Log(keyCount);
             fadeout = true;
             sceneName = "Clear";

@@ -12,7 +12,17 @@ public class Fade : MonoBehaviour
     private float alpha;
     private bool fadeout = false;
     private bool fadein;
-    
+    public bool ranking = false;
+    public static Fade instance;
+
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +44,18 @@ public class Fade : MonoBehaviour
         }
      if (Input.GetMouseButtonDown(0))
         {
-            fadeout = true;
+            if (SceneManager.GetActiveScene().name == "Clear")
+            {
+                if (ranking)
+                {
+                    fadeout = true;
+                }
+            }
+            else
+            {
+                fadeout = true;
+            }
+                
         }
     }
     void FadeOut()
