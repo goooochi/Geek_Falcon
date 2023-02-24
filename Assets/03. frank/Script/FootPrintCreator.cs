@@ -14,20 +14,11 @@ public class FootPrintCreator : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     public void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.name == "Key(Clone)")
-        {
-            Destroy(collision.gameObject);
-            GameClear.instance.OpenDoor();
-            Compass.instance.destination = GameObject.Find("ClearJudge").transform;
-        }
+        
     }
 
     void FootStepRight()

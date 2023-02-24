@@ -15,10 +15,6 @@ public class Laser_tail_title : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time++;
-        if (time > 200)//60フレーム後に削除
-        {
-            Destroy(gameObject);
-        }
+        
     }
 }
