@@ -90,11 +90,9 @@ public class PlayerController1 : MonoBehaviour
         //しゃがみ
         if (Input.GetKey(KeyCode.C))
         {
-            Debug.Log("PlayerController1 : ");
             crouch = true;
             if (Input.GetKeyDown(KeyCode.C))
             {
-                
                 cam.transform.DOMoveY(0.7f, 0.5f).SetEase(Ease.InOutQuad);
             }
             animator.SetBool("Walking", false);
@@ -147,7 +145,6 @@ public class PlayerController1 : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Escape))
         {
-            //
             Cursor.visible = true;
         }
     }

@@ -8,6 +8,10 @@ public class Laser_Create_Item_3: MonoBehaviour
     public GameObject Laser_prefab_Item;
     public static Laser_Create_Item_3 instance;
 
+    private int keyCounter = 0;
+    private int maxLaserCount = 20;
+    private bool isInstantiate = false;
+
     public void Awake()
     {
         if (instance == null)
@@ -30,13 +34,38 @@ public class Laser_Create_Item_3: MonoBehaviour
 
     public void CreateItemLaser()
     {
-        for (int i = 0; i < Laser_direction.Length; i++)
+        if (keyCounter < maxLaserCount)
         {
-            GameObject l = Instantiate(Laser_prefab_Item, this.transform.position + new Vector3(0, 0.2f, 0), Quaternion.identity);
-            l.GetComponent<Rigidbody>().velocity = Laser_direction[i];
+            for (int i = 0; i < Laser_direction.Length; i++)
+            {
+                GameObject l = Instantiate(Laser_prefab_Item, this.transform.position + new Vector3(0, 0.2f, 0), Quaternion.identity);
+                l.GetComponent<Rigidbody>().velocity = Laser_direction[i];
+            }
+            keyCounter++;
+        }
+        else
+        {
+            CallWaitAndExecute();
+        }
 
+    }
+
+    private IEnumerator WaitAndExecute()
+    {
+        isInstantiate = true;
+        yield return new WaitForSeconds(4f);
+        // 実行したい処理をここに書く
+        keyCounter = 0;
+        isInstantiate = false;
+    }
+
+    private void CallWaitAndExecute()
+    {
+        if (!isInstantiate)
+        {
+            StartCoroutine(WaitAndExecute());
         }
     }
 
-    
+
 }

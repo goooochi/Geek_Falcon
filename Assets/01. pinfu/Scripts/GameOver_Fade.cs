@@ -19,6 +19,7 @@ public class GameOver_Fade : MonoBehaviour
         Panel_image = Panel.GetComponent<Image>();
         alpha = Panel_image.color.a;
         fadein = true;
+
     }
 
     // Update is called once per frame

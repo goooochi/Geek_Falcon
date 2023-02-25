@@ -53,6 +53,7 @@ public class Item : MonoBehaviour
             Debug.Log(KeyPush);
             keyNumText.text = "Collect Key : " + keyCount;
 
+            col.gameObject.SendMessage("DeletePickUIText");
         }
     }
     private void OnCollisionEnter(Collision collision)

@@ -53,7 +53,7 @@ public class Laser_Create_Item: MonoBehaviour
     private IEnumerator WaitAndExecute()
     {
         isInstantiate = true;
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         // 実行したい処理をここに書く
         keyCounter = 0;
         isInstantiate = false;

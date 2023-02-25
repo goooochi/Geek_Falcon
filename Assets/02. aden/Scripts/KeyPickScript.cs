@@ -12,15 +12,23 @@ public class KeyPickScript : MonoBehaviour
     {
         PickUI = GameObject.Find("KeyPickText").GetComponent<Text>();
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            Debug.Log("eneter");
+            PickUI.text = "[E] Pick up the Key";
+        }
+        
+    }
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            PickUI.text = "[E] Pick up the Key";
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Debug.Log("get");
-                PickUI.text = "";
+                
             }
         }
     }
@@ -28,8 +36,12 @@ public class KeyPickScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("hanareta");
             PickUI.text = "";
         }
+    }
+
+    public void DeletePickUIText()
+    {
+        PickUI.text = "";
     }
 }

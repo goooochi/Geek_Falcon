@@ -75,20 +75,17 @@ public class Laser_move_Player : MonoBehaviour {
         //colliderがついているのは、子オブジェクトであるため
         if (collider.transform.parent.name == "key1(Clone)")
         {
-            Debug.Log("Hit1");
             Laser_Create_Item.instance.CreateItemLaser();
         }
 
         if (collider.transform.parent.name == "key2(Clone)")
         {
-            Debug.Log("Hit2");
             Laser_Create_Item_2.instance.CreateItemLaser();
             
         }
 
         if (collider.transform.parent.name == "key3(Clone)")
         {
-            Debug.Log("Hit3");
             Laser_Create_Item_3.instance.CreateItemLaser();
           
         }
