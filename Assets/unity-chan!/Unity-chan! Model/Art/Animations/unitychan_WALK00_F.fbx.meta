@@ -1871,15 +1871,15 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.39473906
-        functionName: FootStepRight
+      - time: 0.38821304
+        functionName: FootStepLeft
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.8436838
-        functionName: FootStepLeft
+      - time: 0.9163676
+        functionName: FootStepRight
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

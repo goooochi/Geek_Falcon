@@ -52,7 +52,6 @@ public class Laser_Create_Player : MonoBehaviour {
 
     public void PlayerLaserCreate()
     {
-        Debug.Log(Laser_direction.Length);
         for (int i = 0; i < Laser_direction.Length; i++)
         {
             GameObject l = Instantiate(Laser_prefab, this.transform.position + new Vector3(0, 0.2f, 0), Quaternion.identity);

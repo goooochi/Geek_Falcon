@@ -26,9 +26,9 @@ public class compass : MonoBehaviour
         compassUnit = compassImage.rectTransform.rect.width / 360f;
 
         
-        twe = GameObject.Find("key_1_collider(Clone)").GetComponent<QestMarker>(); 
-        three = GameObject.Find("key_2_collider(Clone)").GetComponent<QestMarker>();
-        four = GameObject.Find("key_3_collider(Clone)").GetComponent<QestMarker>();
+        twe = GameObject.Find("key1(Clone)").GetComponent<QestMarker>(); 
+        three = GameObject.Find("key2(Clone)").GetComponent<QestMarker>();
+        four = GameObject.Find("key3(Clone)").GetComponent<QestMarker>();
         AddQestMaker(one);
         AddQestMaker(twe);
         AddQestMaker(three);

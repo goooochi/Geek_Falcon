@@ -10,6 +10,9 @@ public class Item : MonoBehaviour
     private GameObject Panel;
     private GameObject keyNumObject;
     private Text keyNumText;
+
+    public Text PickUI;
+
     Image Panel_image;
     private float alpha;
     private bool keyFlag;
@@ -28,6 +31,7 @@ public class Item : MonoBehaviour
         keyNumObject = GameObject.Find("KeyNumText");
         keyNumText = keyNumObject.GetComponent<Text>();
         keyNumText.text = "Collect Key : 0";
+
     }
 
     // Update is called once per frame
@@ -48,6 +52,7 @@ public class Item : MonoBehaviour
             Destroy(col.gameObject);
             Debug.Log(KeyPush);
             keyNumText.text = "Collect Key : " + keyCount;
+
         }
     }
     private void OnCollisionEnter(Collision collision)

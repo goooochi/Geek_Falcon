@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+//鍵に近づくと、Pickテイストを表示する機能
 public class KeyPickScript : MonoBehaviour
 {
     Text PickUI;

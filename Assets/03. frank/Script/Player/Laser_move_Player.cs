@@ -18,6 +18,10 @@ public class Laser_move_Player : MonoBehaviour {
     
     public static Laser_move_Player instance;
 
+    
+
+    private bool isInstantiate = false;
+
     public void Awake()
     {
         if (instance == null)
@@ -69,20 +73,27 @@ public class Laser_move_Player : MonoBehaviour {
             enemyScript.isTrigger = true;
         }
         //colliderがついているのは、子オブジェクトであるため
-        if (collider.transform.parent.name == "key_1_collider(Clone)")
+        if (collider.transform.parent.name == "key1(Clone)")
         {
+            Debug.Log("Hit1");
             Laser_Create_Item.instance.CreateItemLaser();
         }
 
-        if (collider.transform.parent.name == "key_2_collider(Clone)")
+        if (collider.transform.parent.name == "key2(Clone)")
         {
+            Debug.Log("Hit2");
             Laser_Create_Item_2.instance.CreateItemLaser();
+            
         }
 
-        if (collider.transform.parent.name == "key_3_collider(Clone)")
+        if (collider.transform.parent.name == "key3(Clone)")
         {
+            Debug.Log("Hit3");
             Laser_Create_Item_3.instance.CreateItemLaser();
+          
         }
 
     }
+
+    
 }
