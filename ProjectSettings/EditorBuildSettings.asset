@@ -5,28 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Main/scenes/Title.unity
     guid: cc23cf86adb4a47e7a78a8797a020fa5
-  - enabled: 0
+  - enabled: 1
     path: Assets/Main/scenes/Stage.unity
-    guid: c4fe67cac74eb4e62a90bc70a003390a
-  - enabled: 0
-    path: Assets/Main/scenes/GameOver.unity
-    guid: e14e6640b6be5454f8fa7dfc1d7b8129
-  - enabled: 0
-    path: Assets/Main/scenes/Clear.unity
-    guid: 780fd108e150d4bd7800c69cf438a026
-  - enabled: 1
-    path: Assets/01. pinfu/Scenes/newscene/Title 1.unity
-    guid: 1096564087a99405dbee57d76a4efbf0
-  - enabled: 1
-    path: Assets/01. pinfu/Scenes/newscene/Stage 1.unity
     guid: 8331d77e82f6f48539b7fb7684da4718
   - enabled: 1
-    path: Assets/01. pinfu/Scenes/newscene/GameOver 1.unity
-    guid: cedaa0878e707412eb11bb880f53f014
+    path: Assets/Main/scenes/GameOver.unity
+    guid: e14e6640b6be5454f8fa7dfc1d7b8129
   - enabled: 1
-    path: Assets/01. pinfu/Scenes/newscene/Clear 1.unity
-    guid: ad3b9eb857c5044e6b4fc17c704dcdff
+    path: Assets/Main/scenes/Clear.unity
+    guid: 780fd108e150d4bd7800c69cf438a026
   m_configObjects: {}
