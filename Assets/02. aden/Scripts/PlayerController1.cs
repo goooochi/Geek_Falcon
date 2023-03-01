@@ -69,7 +69,7 @@ public class PlayerController1 : MonoBehaviour
         }
 
         // 
-        if (Input.GetKey("left shift") && Input.GetKey(KeyCode.W)) //Shiftキーかつ上キーが押されている間
+        if (Input.GetKey("left shift") && Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.C)) //Shiftキーかつ上キーが押されている間
         {
             Vector3 velocity = gameObject.transform.rotation * new Vector3(0, 0, 3);
             gameObject.transform.position += velocity * Time.deltaTime;
@@ -95,8 +95,8 @@ public class PlayerController1 : MonoBehaviour
             {
                 cam.transform.DOMoveY(0.7f, 0.5f).SetEase(Ease.InOutQuad);
             }
-            animator.SetBool("Walking", false);
-            animator.SetBool("Squat", true);
+            animator.SetBool("Walking", true);
+           // animator.SetBool("Squat", true);
            
             if (Input.GetKey(KeyCode.W))
             {
@@ -117,6 +117,10 @@ public class PlayerController1 : MonoBehaviour
             {
                 Vector3 velocity = gameObject.transform.rotation * new Vector3(-2, 0, 2);
                 gameObject.transform.position += velocity * Time.deltaTime;
+            }
+            else
+            {
+                animator.SetBool("Walking", false);
             }
         }
         
