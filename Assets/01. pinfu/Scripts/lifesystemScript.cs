@@ -14,6 +14,7 @@ public class lifesystemScript : MonoBehaviour
     public string SceneName;
     private float timer = 0;
     private float stopTimer = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,32 +29,33 @@ public class lifesystemScript : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if(timer >= 1)
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
-            life -= 0.01f;
-            if (Input.GetKey(KeyCode.LeftShift))
+            if (timer >= 1)
             {
-                life -= 0.05f;
-            }
-            timer = 0.0f;
-        }
-        if(!Input.GetKey(KeyCode.W) && !Input.GetKey(KeyCode.A) && !Input.GetKeyDown(KeyCode.S) && !Input.GetKeyDown(KeyCode.D))
-        {
-            stopTimer += Time.deltaTime;
-            if (Input.GetKey(KeyCode.Q))
-            {
-                if (stopTimer >= 0.5f)
+                life -= 0.01f;
+                if (Input.GetKey(KeyCode.LeftShift))
                 {
-                    life += 0.05f;
-                    if (life >= life_max)
-                    {
-                        life = life_max;
-                    }
-                    stopTimer = 0.0f;
+                    life -= 0.05f;
                 }
+                timer = 0.0f;
             }
+        }
+        else
+        { 
+            stopTimer += Time.deltaTime;
+            if (stopTimer >= 0.5f)
+            {
+                life += 0.05f;
+                if (life >= life_max)
+                {
+                    life = life_max;
+                }
+                stopTimer = 0.0f;
+            } 
         }
         WarningSystem();
+        Debug.Log(life);
     }
 
     void WarningSystem()
