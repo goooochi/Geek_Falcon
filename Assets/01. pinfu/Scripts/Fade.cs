@@ -34,22 +34,21 @@ public class Fade : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     if (fadeout == true)
-        {
-            FadeOut();
-        }
-     if (fadein == true)
-        {
-            FadeIn();
-        }
-     if (Input.GetMouseButtonDown(0))
+         if (fadeout == true)
+            {
+                FadeOut();
+            }
+         if (fadein == true)
+            {
+                FadeIn();
+            }
+
+        
+        if (Input.GetMouseButtonDown(0))
         {
             if (SceneManager.GetActiveScene().name == "Clear")
             {
-                if (ranking)
-                {
-                    fadeout = true;
-                }
+                    
             }
             else
             {
