@@ -5324,6 +5324,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06af340fdbdac49c195892e397795c56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pic4: {fileID: 7926314109625015534, guid: 1753f7a86d0a84e59b7124bc999f131d, type: 3}
+  pic5: {fileID: 8985274430153726184, guid: 61564a23dbbe945ee90f3842d9fb05a7, type: 3}
+  lastText: {fileID: 409068862885883086, guid: e360563a1b88446a9b1494e21eefbf30, type: 3}
+  PickUI: {fileID: 0}
 --- !u!1 &4303901473067312897
 GameObject:
   m_ObjectHideFlags: 0
