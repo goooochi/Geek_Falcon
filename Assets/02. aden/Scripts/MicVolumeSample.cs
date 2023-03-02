@@ -7,7 +7,8 @@ public class MicVolumeSample : MonoBehaviour
     [SerializeField, Range(0f, 10f)] float m_gain = 1f; // 音量に掛ける倍率
     float m_volumeRate; // 音量(0-1)
    [SerializeField] float isTriggerVolume;
-    private bool canTriggerChange = false; 
+    private bool canTriggerChange = false;
+    private float falseTime=1;
     // Use this for initialization
     void Start()
     {
@@ -25,7 +26,16 @@ public class MicVolumeSample : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      //  Debug.Log(m_volumeRate);
+        //  Debug.Log(m_volumeRate);
+        if (falseTime > 0)
+        {
+            falseTime -= Time.deltaTime;
+        }
+        else if(canTriggerChange == true && falseTime < 0)
+        {
+            enemyScript.isTrigger = false;
+            canTriggerChange = false;
+        }
     }
 
     // オーディオが読まれるたびに実行される
@@ -38,16 +48,18 @@ public class MicVolumeSample : MonoBehaviour
         }
         // データ数で割ったものに倍率をかけて音量とする
         m_volumeRate = Mathf.Clamp01(sum * m_gain / (float)data.Length);
-        if (m_volumeRate > isTriggerVolume && canTriggerChange == false)
+        if (m_volumeRate > isTriggerVolume )
         {
             enemyScript.isTrigger = true;
             canTriggerChange = true;
+            falseTime = 10;
             Debug.Log("VolT");
         }
         else if(canTriggerChange == true && m_volumeRate < isTriggerVolume)
         {
-            enemyScript.isTrigger = false;
-            canTriggerChange = false;
+            // enemyScript.isTrigger = false;
+            // canTriggerChange = false;
+          //  falseTime = 10;
             Debug.Log("VolF");
         }
     }
