@@ -94,32 +94,38 @@ public class PlayerController1 : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.C))
             {
                 cam.transform.DOMoveY(0.7f, 0.5f).SetEase(Ease.InOutQuad);
+                
             }
             animator.SetBool("Walking", true);
-           // animator.SetBool("Squat", true);
+            
            
             if (Input.GetKey(KeyCode.W))
             {
                 Vector3 velocity = gameObject.transform.rotation * new Vector3(0, 0, -2);
                 gameObject.transform.position += velocity * Time.deltaTime;
+                animator.SetBool("Squat", true);
             }
             else if (Input.GetKey(KeyCode.S))
             {
                 Vector3 velocity = gameObject.transform.rotation * new Vector3(0, 0, 2);
                 gameObject.transform.position += velocity * Time.deltaTime;
+                animator.SetBool("Squat", true);
             }
             else if (Input.GetKey(KeyCode.A))
             {
                 Vector3 velocity = gameObject.transform.rotation * new Vector3(2, 0, 0);
                 gameObject.transform.position += velocity * Time.deltaTime;
+                animator.SetBool("Squat", true);
             }
             else if (Input.GetKey(KeyCode.D))
             {
                 Vector3 velocity = gameObject.transform.rotation * new Vector3(-2, 0, 2);
                 gameObject.transform.position += velocity * Time.deltaTime;
+                animator.SetBool("Squat", true);
             }
             else
             {
+                animator.SetBool("Squat", false);
                 animator.SetBool("Walking", false);
             }
         }

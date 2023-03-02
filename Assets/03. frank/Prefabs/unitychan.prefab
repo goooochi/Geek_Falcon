@@ -4974,6 +4974,8 @@ GameObject:
   - component: {fileID: 4303901473067278746}
   - component: {fileID: 3165173512508302543}
   - component: {fileID: 893170689065512203}
+  - component: {fileID: 27172632}
+  - component: {fileID: 1808454320473033042}
   m_Layer: 6
   m_Name: unitychan
   m_TagString: Player
@@ -5324,6 +5326,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06af340fdbdac49c195892e397795c56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PickUI: {fileID: 0}
+--- !u!114 &27172632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4303901473067312895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91e3de3913460ea498b42f49a6e51ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Laser_prefab: {fileID: 1450584830110524, guid: 90be7a2ed5146364baa548ce02bc7464, type: 3}
+--- !u!114 &1808454320473033042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4303901473067312895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42d5c18dff4ee9a428edbd798c55542e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footStepRight: {fileID: 3813423328256760261, guid: f1d89bcf92bad414dae0b18851964742, type: 3}
+  footStepLeft: {fileID: 4178204057083428811, guid: 1b9238ced48414590b3487a88a654212, type: 3}
 --- !u!1 &4303901473067312897
 GameObject:
   m_ObjectHideFlags: 0
