@@ -14,9 +14,12 @@ public class RankingController : MonoBehaviour
     public GameObject RankingGetFase;
 
     [SerializeField] public InputField userName;
-    
     public Text ScoreText;
 
+    [SerializeField] Text[] userNamesText = new Text[5];
+    [SerializeField] Text[] userScoresText = new Text[5];
+
+     
     /// <summary>
     /// TitleId
     /// </summary>
@@ -24,16 +27,18 @@ public class RankingController : MonoBehaviour
 
     const string STATISTICS_NAME = "HighScore";
 
-
+    private void Awake()
+    {
+        TimeScript.instance.getTime = true;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
         PlayFabClientAPI.LoginWithCustomID(
-            new LoginWithCustomIDRequest { CustomId = "Test", CreateAccount = true },
+            new LoginWithCustomIDRequest { CustomId = "Test2", CreateAccount = true },
             result => Debug.Log("ログイン成功！"),
             error => Debug.Log("ログイン失敗"));
-        
 
         Fade.instance.ranking = false;
     }
@@ -51,7 +56,7 @@ public class RankingController : MonoBehaviour
         RankingGetFase.SetActive(true);
 
         //scoreを送信
-        SubmitScore(500);
+        SubmitScore(-1 * TimeScript.instance.score);
         SetUserName(userName.text);
         RequestLeaderBoard();
 
@@ -109,22 +114,20 @@ public class RankingController : MonoBehaviour
             {
                 StatisticName = STATISTICS_NAME,
                 StartPosition = 0,
-                MaxResultsCount = 10
+                MaxResultsCount = 5
             },
             result =>
             {
-
-                //result.Leaderboard.ForEach(
-                //    x => 
-                //    ScoreText.text += $"\n順位 : {x.Position}, スコア : {x.StatValue}, 名前 : {x.DisplayName}, ID : {x.PlayFabId}"
-                //    );
-
-                // 実際は良い感じのランキングを表示するコードにします。
                 foreach (var item in result.Leaderboard)
                 {
                     // Positionは順位です。0から始まるので+1して表示しています。
                     Debug.Log($"{item.Position + 1}位: {item.DisplayName} - {item.StatValue}");
+
+                    userNamesText[item.Position].text = item.DisplayName;
+
+                    userScoresText[item.Position].text = (-1 * item.StatValue).ToString();
                 }
+
             },
             error =>
             {
