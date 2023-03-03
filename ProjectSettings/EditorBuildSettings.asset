@@ -16,5 +16,5 @@ EditorBuildSettings:
     guid: e14e6640b6be5454f8fa7dfc1d7b8129
   - enabled: 1
     path: Assets/Main/scenes/Clear.unity
-    guid: 780fd108e150d4bd7800c69cf438a026
+    guid: d31397ab2e7644971b4ef98862efb66d
   m_configObjects: {}

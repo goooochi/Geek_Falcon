@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5179,7 +5179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0fde225208f84ddcb66e83b27d2e28f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1639403708}
+  enemyLaser: {fileID: 0}
 --- !u!82 &942158992
 AudioSource:
   m_ObjectHideFlags: 0
@@ -7744,7 +7744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0fde225208f84ddcb66e83b27d2e28f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1639403708}
+  enemyLaser: {fileID: 0}
 --- !u!1001 &1303663706
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9556,8 +9556,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c204104e2944c224e9a547021d2564b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PickUI: {fileID: 137445225}
-  player: {fileID: 918312553}
 --- !u!114 &1623978426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10427,6 +10425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf84ef84b0236494eb6f71842779455f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  crouch: 0
   cam: {fileID: 1730896433}
   player: {fileID: 918312553}
 --- !u!114 &1639403741
