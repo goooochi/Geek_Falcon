@@ -12,6 +12,7 @@ TagManager:
   - Goal
   - Nomal_Enemy
   - Original_Enemy
+  - keyimage
   layers:
   - Default
   - TransparentFX
