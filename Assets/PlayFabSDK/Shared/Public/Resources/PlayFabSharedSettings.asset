@@ -15,7 +15,7 @@ MonoBehaviour:
   TitleId: A325D
   DeveloperSecretKey: RGRDO1SX8W6R4XW7CEZYCQUHT5SAPAHXOJ5UXRDMUPK14NJGFQ
   ProductionEnvironmentUrl: 
-  RequestType: 2
+  RequestType: 0
   DisableDeviceInfo: 0
   DisableFocusTimeCollection: 0
   RequestTimeout: 2000

@@ -19,24 +19,26 @@ public class RankingController : MonoBehaviour
     [SerializeField] Text[] userNamesText = new Text[5];
     [SerializeField] Text[] userScoresText = new Text[5];
 
-     
+
     /// <summary>
     /// TitleId
     /// </summary>
-    private const string TitleId = "Geek_Hawk";
+    [SerializeField] const string TitleId = "Geek_Hawk";
 
     const string STATISTICS_NAME = "HighScore";
 
-    private void Awake()
-    {
-        TimeScript.instance.getTime = true;
-    }
 
     // Start is called before the first frame update
     void Start()
     {
+
+        if (string.IsNullOrEmpty(PlayFabSettings.staticSettings.TitleId))
+        {
+            PlayFabSettings.staticSettings.TitleId = TitleId;
+        }
+
         PlayFabClientAPI.LoginWithCustomID(
-            new LoginWithCustomIDRequest { CustomId = "Test2", CreateAccount = true },
+            new LoginWithCustomIDRequest { CustomId = CreateNewPlayerId(), CreateAccount = true },
             result => Debug.Log("ログイン成功！"),
             error => Debug.Log("ログイン失敗"));
 
@@ -56,7 +58,7 @@ public class RankingController : MonoBehaviour
         RankingGetFase.SetActive(true);
 
         //scoreを送信
-        SubmitScore(-1 * TimeScript.instance.score);
+        SubmitScore(-1 * 250);
         SetUserName(userName.text);
         RequestLeaderBoard();
 
@@ -134,5 +136,14 @@ public class RankingController : MonoBehaviour
                 Debug.Log(error.GenerateErrorReport());
             }
             );
+    }
+
+    /// <summary>
+    /// PlayerIdの新規作成
+    /// </summary>
+    /// <returns></returns>
+    private string CreateNewPlayerId()
+    {
+        return Guid.NewGuid().ToString("N");
     }
 }
