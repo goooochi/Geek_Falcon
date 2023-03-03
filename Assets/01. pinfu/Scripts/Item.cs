@@ -6,6 +6,12 @@ using UnityEngine.UI;
 
 public class Item : MonoBehaviour
 {
+    GameObject pic4;
+    GameObject pic5;
+    GameObject lastText;
+    bool goal = false;
+    int count;
+
     public static string objName;
     private GameObject Panel;
     private GameObject keyNumObject;
@@ -16,7 +22,7 @@ public class Item : MonoBehaviour
     Image Panel_image;
     private float alpha;
     private bool keyFlag;
-    private int keyCount;
+    public static int keyCount;
     private string sceneName;
     private bool fadeout = false;
     private bool KeyPush = false;
@@ -25,6 +31,15 @@ public class Item : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        goal = false;
+        count = 0;
+        pic4 = GameObject.Find("pic4");
+        pic5 = GameObject.Find("pic5");
+        lastText = GameObject.Find("Panel");
+        pic4.SetActive(false);
+        pic5.SetActive(false);
+        lastText.SetActive(false);
+        keyCount = 0;
         Panel = GameObject.Find("FadePanel");
         Panel_image = Panel.GetComponent<Image>();
         alpha = Panel_image.color.a;
@@ -40,6 +55,27 @@ public class Item : MonoBehaviour
         if (fadeout == true)
         {
             FadeOut();
+        }
+        if(goal == true)
+        {
+            if (Input.GetKeyDown(KeyCode.X))
+            {
+                count += 1;
+            }
+            if(count == 1)
+            {
+                Destroy(pic4);
+                pic5.SetActive(true);
+            }else if (count == 2)
+            {
+                Destroy(pic5);
+                lastText.SetActive(true);
+            }else if(count == 3)
+            {
+                Time.timeScale = 1f;
+                fadeout = true;
+                sceneName = "Clear";
+            }
         }
     }
     private void OnTriggerStay(Collider col)
@@ -62,8 +98,9 @@ public class Item : MonoBehaviour
         {
             TimeScript.instance.getTime = true;
             Debug.Log(keyCount);
-            fadeout = true;
-            sceneName = "Clear";
+            Time.timeScale = 0f;
+            pic4.SetActive(true);
+            goal = true;
         }
     }
     void FadeOut()

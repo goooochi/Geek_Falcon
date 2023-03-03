@@ -9,6 +9,7 @@ public class enemy_ab_Script : MonoBehaviour
     private Transform target;
     NavMeshAgent agent;
     float moveSpeed;
+    [SerializeField] private GameObject enemyLaser;
     void Start()
     {
         targetObject = GameObject.Find("unitychan(Clone)");
@@ -22,13 +23,17 @@ public class enemy_ab_Script : MonoBehaviour
         {
             agent.destination = target.position;
             agent.speed = moveSpeed;
-        }else if(PlayerController1.instance.crouch == true)
+            enemyLaser.SetActive(true);
+        }
+        else if(PlayerController1.instance.crouch == true)
         {
             agent.speed = 0;
+            enemyLaser.SetActive(false);
         }
         else
         {
             agent.speed = 0;
+            enemyLaser.SetActive(false);
         }
     }
 }
