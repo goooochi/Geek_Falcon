@@ -35,7 +35,7 @@ public class Item : MonoBehaviour
         count = 0;
         pic4 = GameObject.Find("pic4");
         pic5 = GameObject.Find("pic5");
-        lastText = GameObject.Find("Panel");
+        lastText = GameObject.Find("lasttext");
         pic4.SetActive(false);
         pic5.SetActive(false);
         lastText.SetActive(false);
@@ -94,7 +94,7 @@ public class Item : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Goal")
+        if (collision.gameObject.tag == "Goal" && keyCount == 3)
         {
             TimeScript.instance.getTime = true;
             Debug.Log(keyCount);
